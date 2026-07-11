@@ -8,18 +8,15 @@ using System.Linq;
 
 public class MapDataEditor : EditorWindow
 {
-    // --- Dữ liệu và cấu hình ---
     private MapData currentMapData;
     private int levelToLoad = 1;
     private Vector2 scrollPosition;
     private string levelDataPath = "Assets/Resources/Levels";
 
-    // --- Dữ liệu cho giao diện trực quan ---
     private Dictionary<int, Texture2D> itemPreviews = new Dictionary<int, Texture2D>();
     private int selectedBrushType = 0; // "Cọ vẽ" đang được chọn
     private bool previewsLoaded = false;
 
-    // --- Hằng số cho UI ---
     private const float PALETTE_BUTTON_SIZE = 50f;
     private const float GRID_BUTTON_SIZE = 45f;
 
@@ -38,14 +35,12 @@ public class MapDataEditor : EditorWindow
 
     void OnEnable()
     {
-        // Tải preview khi cửa sổ được mở hoặc recompile
         levelDataPath = EditorPrefs.GetString("MapDataEditor_LevelPath", "Assets/Resources/Levels");
         LoadItemPreviews();
     }
 
     void OnDisable()
     {
-        // Lưu lại đường dẫn khi cửa sổ bị đóng
         EditorPrefs.SetString("MapDataEditor_LevelPath", levelDataPath);
     }
 
@@ -90,12 +85,10 @@ public class MapDataEditor : EditorWindow
 
         EditorGUILayout.LabelField($"Editing Level: {currentMapData.MapLevel}", EditorStyles.boldLabel);
 
-        // --- Basic Settings ---
         currentMapData.MaxMove = EditorGUILayout.IntField("Max Moves", currentMapData.MaxMove);
 
         EditorGUILayout.Space();
 
-        // --- Grid Settings ---
         EditorGUILayout.LabelField("Grid Configuration", EditorStyles.boldLabel);
         EditorGUI.BeginChangeCheck();
         int newNumQueue = EditorGUILayout.IntField("Number of Queues", currentMapData.NumQueue);
@@ -103,7 +96,6 @@ public class MapDataEditor : EditorWindow
 
         if (EditorGUI.EndChangeCheck())
         {
-            // Resize map if dimensions change
             ResizeMap(newNumQueue, newNumPerRow);
         }
 
@@ -114,7 +106,6 @@ public class MapDataEditor : EditorWindow
 
         EditorGUILayout.Space();
 
-        
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("Dummy Item (Click to change)", GUILayout.Width(EditorGUIUtility.labelWidth - 4));
         Texture2D dummyTexture = itemPreviews.ContainsKey(currentMapData.DummyType) ? itemPreviews[currentMapData.DummyType] : itemPreviews[0];
@@ -129,8 +120,6 @@ public class MapDataEditor : EditorWindow
         }
         EditorGUILayout.LabelField($"Type: {currentMapData.DummyType}", GUILayout.Width(80));
         EditorGUILayout.EndHorizontal();
-
-        // --- Lưới bản đồ trực quan (Visual Map Grid) ---
         DrawVisualMapGrid();
 
         EditorGUILayout.Space();
@@ -146,21 +135,15 @@ public class MapDataEditor : EditorWindow
     private void DrawItemPalette()
     {
         EditorGUILayout.LabelField("Item Palette (Chọn loại xe để vẽ)", EditorStyles.boldLabel);
-        
-        // Bắt đầu một khu vực có thể cuộn ngang
         using (var scrollView = new EditorGUILayout.ScrollViewScope(Vector2.zero, GUILayout.Height(PALETTE_BUTTON_SIZE + 20)))
         {
             EditorGUILayout.BeginHorizontal(GUI.skin.box);
-
-            // Sắp xếp các preview theo Type
             var sortedPreviews = itemPreviews.OrderBy(kvp => kvp.Key);
 
             foreach (var preview in sortedPreviews)
             {
                 int type = preview.Key;
                 Texture2D texture = preview.Value;
-
-                // Đổi màu nền nếu đây là "cọ" đang được chọn
                 GUI.backgroundColor = (selectedBrushType == type) ? Color.cyan : Color.white;
 
                 if (GUILayout.Button(new GUIContent(texture), GUILayout.Width(PALETTE_BUTTON_SIZE), GUILayout.Height(PALETTE_BUTTON_SIZE)))
@@ -168,8 +151,6 @@ public class MapDataEditor : EditorWindow
                     selectedBrushType = type;
                 }
             }
-
-            GUI.backgroundColor = Color.white; // Reset lại màu
             EditorGUILayout.EndHorizontal();
         }
     }
@@ -190,19 +171,15 @@ public class MapDataEditor : EditorWindow
                 if (index >= currentMapData.Map.Count) continue;
 
                 int currentTypeInCell = currentMapData.Map[index];
-                
-                // Lấy hình ảnh cho type hiện tại, nếu không có thì dùng hình ảnh của ô trống
                 Texture2D cellTexture = itemPreviews.ContainsKey(currentTypeInCell) ? itemPreviews[currentTypeInCell] : itemPreviews[0];
 
-                // Khi click vào nút trên lưới, "vẽ" type đang chọn vào ô đó
                 if (GUILayout.Button(new GUIContent(cellTexture), GUILayout.Width(GRID_BUTTON_SIZE), GUILayout.Height(GRID_BUTTON_SIZE)))
                 {
-                    // Chỉ thay đổi nếu type khác đi, để hỗ trợ Undo
                     if (currentMapData.Map[index] != selectedBrushType)
                     {
-                        Undo.RecordObject(this, "Paint Map Cell"); // Ghi lại trạng thái để có thể Undo
+                        Undo.RecordObject(this, "Paint Map Cell"); 
                         currentMapData.Map[index] = selectedBrushType;
-                        EditorUtility.SetDirty(this); // Đánh dấu cửa sổ này đã thay đổi
+                        EditorUtility.SetDirty(this); 
                     }
                 }
             }
@@ -263,7 +240,7 @@ public class MapDataEditor : EditorWindow
         File.WriteAllText(filePath, json);
 
         Debug.Log($"Level {currentMapData.MapLevel} saved successfully to {filePath}");
-        AssetDatabase.Refresh(); // Important: Make Unity recognize the new/changed file
+        AssetDatabase.Refresh(); 
     }
 
     private void ResizeMap(int newNumQueue, int newNumPerRow)
@@ -297,14 +274,8 @@ public class MapDataEditor : EditorWindow
 
         try
         {
-            // Danh sách các màu cố định để đại diện cho các loại item
-            // Bạn có thể thêm hoặc thay đổi các màu này
-            
-
-            // Hàm tiện ích để tạo một texture 1x1 từ một màu
             Func<Color, Texture2D> createColorTexture = (color) =>
             {
-                // Tạo texture với kích thước đầy đủ để đảm bảo độ sắc nét
                 int size = (int)PALETTE_BUTTON_SIZE;
                 Texture2D tex = new Texture2D(size, size);
                 Color[] pixels = new Color[size * size];
@@ -316,8 +287,6 @@ public class MapDataEditor : EditorWindow
                 tex.Apply();
                 return tex;
             };
-
-            // Thêm texture cho ô trống hoàn toàn (Type -1)
             itemPreviews[-1] = createColorTexture(Color.black);
 
             // 1. Tạo texture cho ô trống (Type 0) là màu trắng

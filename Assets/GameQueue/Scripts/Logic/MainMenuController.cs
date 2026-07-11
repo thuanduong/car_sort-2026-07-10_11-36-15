@@ -24,7 +24,6 @@ public class MainMenuController : MonoBehaviour
         }
 
         var root = uiDocument.rootVisualElement;
-        // Tìm nút Play bằng tên đã đặt trong UXML
         btnPlay = root.Q<Button>("PlayButton"); 
         settingsButton = root.Q<Button>("SettingsButton");
 
@@ -59,7 +58,6 @@ public class MainMenuController : MonoBehaviour
 
     private void StartGame()
     {
-        // Tải scene game chính
         V3.Component.SoundComponent.Instance?.PlaySFX("click");
         SceneManager.LoadScene(levelMapSceneName);
     }

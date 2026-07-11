@@ -9,7 +9,6 @@ public static class GameGlobal
     public static void ReloadGameValue()
     {
         CompletedLevel = PlayerPrefs.GetInt("GAME_COMPLETE_LEVEL", 1);
-        //HARD SET
         MaxLevel = 50;
     }
 

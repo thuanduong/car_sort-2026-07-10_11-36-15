@@ -32,10 +32,7 @@ public class WinGameController : MonoBehaviour
         nextButton = root.Q<Button>("NextButton");
         loadingIndicator = root.Q<VisualElement>("LoadingIndicator");
 
-        // Gắn sự kiện click
         nextButton.clicked += OnNextClicked;
-
-        // Ẩn ban đầu
         overlay.style.display = DisplayStyle.None;
         SetLoadingState(false);
     }
@@ -45,9 +42,6 @@ public class WinGameController : MonoBehaviour
         nextButton.clicked -= OnNextClicked;
     }
 
-    /// <summary>
-    /// Gọi hàm này khi người chơi hết nước đi (Out of moves)
-    /// </summary>
     public void ShowScreen()
     {
         SetLoadingState(false); // Reset trạng thái loading khi hiện popup
@@ -63,7 +57,6 @@ public class WinGameController : MonoBehaviour
             backgroundWin.gameObject.SetActive(true);
             backgroundWin.alpha = 0f;
         }
-        // Đặt giá trị khởi tạo cho animation
         overlay.style.opacity = 0f;
         popupContainer.style.scale = new StyleScale(new Vector2(0.3f, 0.3f));
         V3.Component.SoundComponent.Instance?.PlaySFX("win");
@@ -75,7 +68,7 @@ public class WinGameController : MonoBehaviour
                    
             DOTween.To(() => popupContainer.style.scale.value.value.x, 
                        x => popupContainer.style.scale = new StyleScale(new Vector2(x, x)), 1f, 0.4f)
-                   .SetEase(Ease.OutBack).ToUniTask() // Ease.OutBack tạo hiệu ứng nảy (bounce nhẹ)
+                   .SetEase(Ease.OutBack).ToUniTask() 
         );
 
         ShowVFX();
@@ -91,8 +84,6 @@ public class WinGameController : MonoBehaviour
     public async UniTaskVoid HidePopupAsync()
     {
         HideVFX();
-
-        // Vô hiệu hóa nút bấm để tránh double-click trong lúc đang đóng
         nextButton.SetEnabled(false);
 
         await UniTask.WhenAll(
@@ -110,17 +101,11 @@ public class WinGameController : MonoBehaviour
             backgroundWin.gameObject.SetActive(false);
         }
         overlay.style.display = DisplayStyle.None;
-        
-        // Bật lại nút cho lần mở sau
         nextButton.SetEnabled(true);
 
         OnClosePopup();
     }
 
-    /// <summary>
-    /// Bật/tắt trạng thái chờ (ẩn nút Next, hiện icon loading).
-    /// </summary>
-    /// <param name="isLoading"></param>
     public void SetLoadingState(bool isLoading)
     {
         if (nextButton != null) {

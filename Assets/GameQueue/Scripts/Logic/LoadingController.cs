@@ -43,15 +43,12 @@ public class LoadingController : MonoBehaviour
 
     private async UniTaskVoid StartLoadingAnimation()
     {
-        // Chờ cho animation của thanh loading hoàn thành
         await AnimateLoadingBarAsync();
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
     private async UniTask AnimateLoadingBarAsync()
     {
-        // Dùng DOTween để tạo hiệu ứng chạy mượt cho loading bar từ 0 đến 100
-        // và cập nhật text hiển thị phần trăm tương ứng.
         await DOTween.To(() => loadingBar.value, x =>
                      {
                          loadingBar.value = x;

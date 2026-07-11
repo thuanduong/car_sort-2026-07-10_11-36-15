@@ -111,7 +111,6 @@ public class EcsGameBootstrap : MonoBehaviour
             gameController.OnRestartGame -= RestartGame;
         }
 
-        // Dọn dẹp World khi scene bị hủy
         if (ecsWorld != null && ecsWorld.IsCreated)
         {
             ecsWorld.Dispose();
@@ -123,24 +122,17 @@ public class EcsGameBootstrap : MonoBehaviour
         ecsWorld = new World("SortQueueWorld");
         entityManager = ecsWorld.EntityManager;
 
-        // Tự động thêm các system mặc định của Unity
         var systems = DefaultWorldInitialization.GetAllSystems(WorldSystemFilterFlags.Default);
         DefaultWorldInitialization.AddSystemsToRootLevelSystemGroups(ecsWorld, systems);
         
-        // Tạo và thêm các system của game vào World
         ecsWorld.CreateSystem<InputSystem>();
-
-        // Đối với các ISystem (struct), chỉ cần gọi CreateSystem.
-        // Unity sẽ tự động thêm chúng vào group chính xác dựa trên các attribute [UpdateInGroup].
         ecsWorld.CreateSystem<SortLogicSystem>();
         ecsWorld.CreateSystem<PositionUpdateSystem>();
-        ecsWorld.CreateSystem<PushAnimationSystem>(); // Thêm system mới
+        ecsWorld.CreateSystem<PushAnimationSystem>(); 
         ecsWorld.CreateSystem<MovementSystem>();
         ecsWorld.CreateSystem<WinConditionSystem>();
         ecsWorld.CreateSystem<RedoSystem>();
-        ecsWorld.CreateSystem<SwapSkillSystem>(); // Thêm system mới cho skill swap
-
-        // Tạo query để lắng nghe sự kiện thắng game
+        ecsWorld.CreateSystem<SwapSkillSystem>(); 
         gameWonQuery = entityManager.CreateEntityQuery(typeof(GameWonEvent));
         moveCompletedQuery = entityManager.CreateEntityQuery(typeof(SortLogicSystem.MoveCompletedEvent));
         queueCompletedQuery = entityManager.CreateEntityQuery(typeof(SortLogicSystem.QueueCompletedEvent));
@@ -159,8 +151,6 @@ public class EcsGameBootstrap : MonoBehaviour
         _move = this._maxMove;
         gameController.UpdateMove(_move);
         await GenerateLevelEntities(mapData);
-        // Kích hoạt lại các system có thể đã bị vô hiệu hóa ở màn chơi trước
-        // Đặc biệt quan trọng cho WinConditionSystem vì nó sẽ tự disable khi thắng.
         ecsWorld.Unmanaged.GetExistingSystemState<WinConditionSystem>().Enabled = true;
         ecsWorld.Unmanaged.GetExistingSystemState<InputSystem>().Enabled = true;
         gameController.RestartGame();
@@ -174,10 +164,8 @@ public class EcsGameBootstrap : MonoBehaviour
 
     public void ClearOldGame()
     {
-        // Hủy tất cả entity cũ
         entityManager.DestroyEntity(entityManager.UniversalQuery);
 
-        // Hủy các GameObject cũ
         foreach (var go in activeGameObjects)
         {
             Destroy(go);
@@ -191,8 +179,6 @@ public class EcsGameBootstrap : MonoBehaviour
         _moveHistory.Clear();
         
         IsSwapSkillActive = false;
-
-        // Đảm bảo dọn dẹp các sự kiện singleton có thể còn sót lại
         var moveInProgressQuery = entityManager.CreateEntityQuery(typeof(SortLogicSystem.MoveInProgressEvent));
         if (!moveInProgressQuery.IsEmpty)
         {
@@ -203,7 +189,6 @@ public class EcsGameBootstrap : MonoBehaviour
 
     private async UniTask GenerateLevelEntities(MapData mapData)
     {
-        // --- 1. Tạo các Anchor và Singleton GameSettings ---
         var anchorPositions = new FixedList512Bytes<float3>();
         var splineItemPositions = new FixedList512Bytes<float3>(); 
         var splineItemRotations = new FixedList512Bytes<quaternion>(); 
@@ -214,8 +199,6 @@ public class EcsGameBootstrap : MonoBehaviour
             var qa = queueAnchors[i];
             qa.queueIndex = i;
             anchorPositions.Add(qa.transform.position);
-
-            // Bake vị trí của các item trên spline cho hàng đợi này
             for (int j = 0; j < itemsPerQueue; j++)
             {
                 var progress = GetEvaluatePositionOnLine(j);
@@ -233,8 +216,6 @@ public class EcsGameBootstrap : MonoBehaviour
         GameObject dummyObj = Instantiate(dummyAnchorPrefab, dPos, Quaternion.identity, levelRoot);
         dummyObj.name = "DummyAnchor";
         activeGameObjects.Add(dummyObj);
-
-        // Tạo entity singleton chứa cấu hình game
         Entity settingsEntity = entityManager.CreateEntity();
         entityManager.AddComponentData(settingsEntity, new GameSettings
         {
@@ -257,48 +238,33 @@ public class EcsGameBootstrap : MonoBehaviour
 
         entityManager.AddComponentObject(settingsEntity, this);
 
-        // --- 3. Tạo Entities cho Items ---
         int poolIdx = 0;
         for (int i = 0; i < mapData.NumQueue; i++)
         {
             for (int j = 0; j < mapData.NumPerRow; j++)
             {
                 int currentType = mapData.Map[poolIdx++];
-                if (currentType == -1) continue; // Bỏ qua nếu là ô trống
-                // Vector3 itemPos = GetItemPosition(anchorPositions[i], j);
+                if (currentType == -1) continue; 
                 var progress = GetEvaluatePositionOnLine(j);
                 var itemPos = GetItemPositionFromSpline(progress, i, j);
                 var itemRot = GetItemRotationFromSpline(progress, i, j);
                 var itemScaler = GetItemScaler(progress);
-                CreateItemEntityAndGameObject(currentType, i, j, itemPos, itemRot, itemScaler, false); // Tạo entity và GameObject cho item
+                CreateItemEntityAndGameObject(currentType, i, j, itemPos, itemRot, itemScaler, false); 
             }
-            await UniTask.Yield(); // Cho phép main thread chạy các tác vụ khác, tránh bị treo
+            await UniTask.Yield(); 
         }
-
-        // Tạo entity cho Dummy Item
         int dummyType = mapData.DummyType;
         CreateItemEntityAndGameObject(dummyType, -1, 0, dPos, quaternion.identity, GetItemScaler(1.0f), true);
 
     }
     
     /// <summary>
-    /// Tính toán vị trí bắt đầu (góc dưới bên trái) của toàn bộ layout các hàng đợi.
-    /// </summary>
-    /// <returns>Vị trí bắt đầu trong không gian thế giới.</returns>
     private Vector3 CalculateLayoutStartPosition()
     {
         float totalWidth = (queueCount - 1) * queueSpacingX;
         float totalHeight = (itemsPerQueue - 1) * itemSpacingY;
-        // Vị trí bắt đầu được tính toán để toàn bộ layout sẽ được căn giữa theo `startRowPosition`
         return startRowPosition.position - new Vector3(totalWidth / 2f, totalHeight, 0);
     }
-    
-    /// <summary>
-    /// Tính toán vị trí thế giới của một item trong một hàng đợi.
-    /// </summary>
-    /// <param name="anchorPosition">Vị trí của anchor (điểm gốc) của hàng đợi.</param>
-    /// <param name="itemIndexInQueue">Chỉ số của item trong hàng đợi (0 là item dưới cùng).</param>
-    /// <returns>Vị trí thế giới của item.</returns>
     private Vector3 GetItemPosition(float3 anchorPosition, int itemIndexInQueue)
     {
         return (Vector3)anchorPosition + Vector3.up * (itemIndexInQueue * itemSpacingY);
@@ -322,7 +288,7 @@ public class EcsGameBootstrap : MonoBehaviour
         return quaternion.identity;
         if (queueIndex < 0 || queueIndex >= lines.Count)
         {
-            return quaternion.identity; // Trả về giá trị mặc định nếu index không hợp lệ
+            return quaternion.identity; 
         }
         var spline = lines[queueIndex];
         var tangent  = spline.EvaluateTangent(t);
@@ -383,29 +349,25 @@ public class EcsGameBootstrap : MonoBehaviour
         });
         
         entityManager.AddComponentData(entity, new LocalTransform { Position = position, Rotation = rotation, Scale = scaler });
-        entityManager.AddComponent<LocalToWorld>(entity); // Cần cho rendering và transform
+        entityManager.AddComponent<LocalToWorld>(entity); 
 
         if (isDummy)
         {
             entityManager.AddComponent<DummyData>(entity);
         }
-
-        // Tạo GameObject tương ứng cho Hybrid Rendering
         if (type >= 0 && type < itemPrefabs.Length)
         {
-            GameObject prefab = itemPrefabs[type]; // type tương ứng với index
+            GameObject prefab = itemPrefabs[type]; 
             GameObject itemGO = Instantiate(prefab, position, rotation, levelRoot);
             itemGO.transform.localScale = new Vector3(scaler, scaler, scaler);
             entityGameObjectMap[entity] = itemGO;
             activeGameObjects.Add(itemGO);
-
-            // Lấy và lưu trữ Animator
             CarController animator = itemGO.GetComponent<CarController>();
             if (animator != null)
             {
                 entityAnimatorMap[entity] = animator;
-                entityMovingState[entity] = false; // Khởi tạo trạng thái đứng yên
-                entityPushingState[entity] = false; // Khởi tạo trạng thái không push
+                entityMovingState[entity] = false; 
+                entityPushingState[entity] = false; 
                 if (isDummy)
                 {
                     animator.car_eye.SetBool("is_look", true);
@@ -422,24 +384,17 @@ public class EcsGameBootstrap : MonoBehaviour
         }
     }
 
-
-    /// <summary>
-    /// Cập nhật vị trí và hình ảnh của GameObjects dựa trên dữ liệu từ ECS.
-    /// </summary>
     private void UpdateGameObjectTransforms()
     {
         if (IsPlaying == false) return;
         
         var gameSettingsEntity = entityManager.CreateEntityQuery(typeof(GameSettings)).GetSingletonEntity();
         var gameSettings = entityManager.GetComponentData<GameSettings>(gameSettingsEntity);
-
-        // Dùng NativeArray để tránh lỗi khi entity bị hủy trong lúc duyệt
         var entities = new NativeArray<Entity>(entityGameObjectMap.Keys.ToArray(), Allocator.Temp);
         foreach (var entity in entities)
         {
             if (!entityManager.Exists(entity) || !entityGameObjectMap.ContainsKey(entity))
             {
-                // Dọn dẹp nếu entity không còn tồn tại
                 entityGameObjectMap.Remove(entity);
                 entityAnimatorMap.Remove(entity);
                 entityMovingState.Remove(entity);
@@ -457,15 +412,11 @@ public class EcsGameBootstrap : MonoBehaviour
             bool wasMoving = entityMovingState.ContainsKey(entity) && entityMovingState[entity];
             bool wasPushing = entityPushingState.ContainsKey(entity) && entityPushingState[entity];
 
-            // Xử lý animation PUSH
-            // Chỉ trigger khi trạng thái push vừa được bật
             if (isPushingNow && !wasPushing)
             {
-                // Trong phase 2, entity được push là bot item, nhưng animation trigger trên dummy
                 var pushRequest = entityManager.GetComponentData<SortLogicSystem.PushAnimationRequest>(entity);
                 if (entityAnimatorMap.ContainsKey(pushRequest.PushingEntity))
                 {
-                    // Trigger animation trên entity đang thực hiện hành vi push (dummy)
                     entityAnimatorMap[pushRequest.PushingEntity].car_anim.SetTrigger("push");
                     entityAnimatorMap[pushRequest.PushingEntity].car_eye.SetBool("is_open", true);
                 }
@@ -524,30 +475,26 @@ public class EcsGameBootstrap : MonoBehaviour
             
             go.transform.position = newTransform.Position;
             go.transform.rotation = newTransform.Rotation;
-            entityMovingState[entity] = isMovingNow; // Cập nhật trạng thái cho frame tiếp theo
-            entityPushingState[entity] = isPushingNow; // Cập nhật trạng thái push cho frame tiếp theo
+            entityMovingState[entity] = isMovingNow; 
+            entityPushingState[entity] = isPushingNow; 
         }
 
-        // Nếu game đã được đánh dấu là kết thúc và không còn entity nào đang di chuyển
         if (_isGameOverPending && entityManager.CreateEntityQuery(typeof(MoveTo)).IsEmpty)
         {
-            _isGameOverPending = false; // Reset cờ
+            _isGameOverPending = false; 
             IsPlaying = false;
-            gameController.FinishGame(false); // Chỉ gọi FinishGame khi mọi thứ đã dừng hẳn
+            gameController.FinishGame(false); 
         }
         entities.Dispose();
     }
 
     private void CheckForWinCondition()
     {
-        // Nếu có entity GameWonEvent tồn tại
         if (!gameWonQuery.IsEmpty)
         {
             IsPlaying = false;
             ecsWorld.Unmanaged.GetExistingSystemState<InputSystem>().Enabled = false;
             gameController.FinishGame(true);
-            
-            // Hủy entity event để không xử lý lại ở frame sau
             entityManager.DestroyEntity(gameWonQuery);
         }
     }
@@ -563,7 +510,6 @@ public class EcsGameBootstrap : MonoBehaviour
 
     private void CheckForQueueCompleted()
     {
-        // Sử dụng NativeArray để duyệt qua các sự kiện một cách an toàn
         using (var eventEntities = queueCompletedQuery.ToEntityArray(Allocator.TempJob))
         {
             if (eventEntities.Length > 0)
@@ -575,15 +521,12 @@ public class EcsGameBootstrap : MonoBehaviour
                     var eventData = entityManager.GetComponentData<SortLogicSystem.QueueCompletedEvent>(entity);
                     int queueIndex = eventData.QueueIndex;
                     Debug.Log($"Complete Queue {queueIndex}");
-                    // Tạo lá cờ tại vị trí của hàng đợi đã hoàn thành
                     Vector3 anchorPos = gameSettings.QueueAnchorPositions[queueIndex];
                     Vector3 flagPos = anchorPos - new Vector3(0, extraFlagLength, 0);
                     GameObject flagObj = Instantiate(flagObjectPrefab, flagPos, Quaternion.identity, levelRoot);
                     flagObj.transform.localScale = Vector3.zero;
                     flagObj.transform.DOScale(1, 0.5f).SetEase(Ease.OutBack);
                     activeGameObjects.Add(flagObj);
-
-                    // --- START: Logic mới để cập nhật animation cho xe trong hàng đã hoàn thành ---
                     using (var carEntities = entityManager.CreateEntityQuery(typeof(ItemData)).ToEntityArray(Allocator.Temp))
                     {
                         foreach (var carEntity in carEntities)
@@ -597,26 +540,22 @@ public class EcsGameBootstrap : MonoBehaviour
                                 Sequence headShakeSequence = DOTween.Sequence();
                                 headShakeSequence.Append(carController.transform.DORotate(new Vector3(0, 0, 6), 0.25f).SetEase(Ease.Linear))
                                                  .Append(carController.transform.DORotate(new Vector3(0, 0, -6), 0.25f).SetEase(Ease.Linear))
-                                                 .SetLoops(8, LoopType.Yoyo); // Lặp lại 8 lần (mỗi lần 0.5s, tổng 4s)
+                                                 .SetLoops(8, LoopType.Yoyo); 
 
                                 headShakeSequence.OnComplete(() => carController.transform.DORotate(Vector3.zero, 0.1f));
                             }
                         }
                     }
-                    // --- END: Logic mới ---
                 }
-                // Phát âm thanh hoàn thành hàng
                 V3.Component.SoundComponent.Instance?.PlaySFX("QueueComplete");
                 entityManager.DestroyEntity(queueCompletedQuery);
             }
         }
     }
-
     private void CheckForMoveStarted()
     {
         if (!moveStartedQuery.IsEmpty)
         {
-            // --- Logic mới để lưu trạng thái cho Redo ---
             var currentState = new Dictionary<Entity, ItemData>();
             using (var entities = entityManager.CreateEntityQuery(typeof(ItemData)).ToEntityArray(Allocator.Temp))
             {
@@ -626,17 +565,11 @@ public class EcsGameBootstrap : MonoBehaviour
                 }
             }
             _moveHistory.Add(currentState);
-            // Giới hạn lịch sử, ví dụ 20 nước đi
             if (_moveHistory.Count > 20)
             {
                 _moveHistory.RemoveAt(0);
             }
-            // --- Hết logic mới ---
-
-            // Phát âm thanh và animation khi có nước đi hợp lệ
             V3.Component.SoundComponent.Instance?.PlaySFX("click");
-
-            // Hủy entity event để không xử lý lại ở frame sau
             entityManager.DestroyEntity(moveStartedQuery);
         }
     }
@@ -660,8 +593,6 @@ public class EcsGameBootstrap : MonoBehaviour
         entityAnimatorMap[entity].car_eye.SetTrigger("open_close");
     }
 
-
-
     public void NewMove()
     {
         if (!IsPlaying) return;
@@ -670,9 +601,7 @@ public class EcsGameBootstrap : MonoBehaviour
         gameController.UpdateMove(_move);
         if (_move <= 0 && _isGameOverPending == false)
         {
-            //IsPlaying = false;
             ecsWorld.Unmanaged.GetExistingSystemState<InputSystem>().Enabled = false;
-            // Đánh dấu rằng game đã hết lượt, nhưng đợi di chuyển xong mới hiển thị popup
             _isGameOverPending = true;
         }
     }
@@ -699,28 +628,20 @@ public class EcsGameBootstrap : MonoBehaviour
         return entityGameObjectMap;
     }
 
-    /// <summary>
-    /// Xử lý animation ngẫu nhiên cho các xe đang đứng im trong hàng đợi.
-    /// </summary>
     private void UpdateIdleCarAnimations()
     {
-        // Chỉ chạy khi game đang diễn ra và không có hành động nào đang xử lý (không có popup, không có xe di chuyển)
         if (!IsPlaying || IsUIBlockingInput || !entityManager.CreateEntityQuery(typeof(SortLogicSystem.MoveInProgressEvent)).IsEmpty)
         {
-            _idleAnimationTimer = 0; // Reset bộ đếm nếu game không ở trạng thái chờ
+            _idleAnimationTimer = 0; 
             return;
         }
 
         _idleAnimationTimer += Time.deltaTime;
-
-        // Khi hết thời gian chờ
         if (_idleAnimationTimer >= _idleAnimationInterval)
         {
             _idleAnimationTimer = 0f;
-            // Tạo một khoảng thời gian chờ ngẫu nhiên mới cho lần tiếp theo
             _idleAnimationInterval = UnityEngine.Random.Range(1.5f, 3.5f);
 
-            // Tìm tất cả các xe hợp lệ (đang trong hàng đợi và không phải là xe vừa chớp mắt)
             var eligibleCars = new List<Entity>();
             using (var entities = entityManager.CreateEntityQuery(typeof(ItemData)).ToEntityArray(Allocator.Temp))
             {
@@ -741,7 +662,4 @@ public class EcsGameBootstrap : MonoBehaviour
             }
         }
     }
-
-
-
 }

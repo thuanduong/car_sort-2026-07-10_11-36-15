@@ -16,21 +16,15 @@ public class UIBackgroundScroller : MonoBehaviour
         if (uiDocument == null) uiDocument = GetComponent<UIDocument>();
         
         var root = uiDocument.rootVisualElement;
-        
-        // Tìm element dựa vào class name mà bạn đã định nghĩa trong USS
         _carBg = root.Q<VisualElement>(className: "car-bg");
 
         if (_carBg != null)
         {
-            // Lên lịch chạy mỗi 16ms (tương đương ~60fps)
             _carBg.schedule.Execute(state =>
             {
-                // state.deltaTime trả về thời gian giữa các lần gọi (tính bằng mili-giây)
                 float dt = state.deltaTime / 1000f; 
                 
                 _currentOffset += scrollSpeed * dt;
-
-                // Reset giá trị về 0 khi vượt mức để tránh tràn biến float sau thời gian dài
                 if (Mathf.Abs(_currentOffset.x) > 10000f) _currentOffset.x = 0;
                 if (Mathf.Abs(_currentOffset.y) > 10000f) _currentOffset.y = 0;
 

@@ -66,28 +66,22 @@ public class GameController : MonoBehaviour
         levelLabel = root.Q<Label>("level");
         moveLabel = root.Q<Label>("move");
 
-        //setting
         popupSettingInstance = root.Q<VisualElement>("PopupSettingInstance");
         popupSettingInstance?.AddToClassList("popup-closed");
         _popupSettingController.OnClosePopup += OnPopupBackClicked;
         _popupSettingController.OnReplayGame += OnPopupBackReplayClicked;
         _popupSettingController.OnGoHome += OnEndGameGoHome;
-
-        //lose game
         loseGameInstance = root.Q<VisualElement>("LoseGameInstance");
         loseGameInstance?.AddToClassList("popup-closed");
         _loseGameController.OnClosePopup += OnCloseLoseGame;
         _loseGameController.OnReplayAction += OnLoseGameReplay;
         _loseGameController.OnViewAdsAction += OnLoseGameWatchAds;
-        //win game
         winGameInstance = root.Q<VisualElement>("WinGameInstance");
         winGameInstance?.AddToClassList("popup-closed");
         _winGameController.OnClosePopup += OnCloseWinGame;
         _winGameController.OnNextAction += OnWinGameNextLevel;
-        //end game
         endGameInstance = root.Q<VisualElement>("EndGameInstance");
         endGameInstance?.AddToClassList("popup-closed");
-        // _endGameController.OnClosePopup += OnCloseEndGame;
         _endGameController.OnHomeAction += OnEndGameGoHome;
 
         //skill
@@ -139,20 +133,17 @@ public class GameController : MonoBehaviour
             settingsButton.clicked -= OnSettingsButtonClicked;
         }
 
-        //setting
         if (_popupSettingController != null) {
             _popupSettingController.OnClosePopup -= OnPopupBackClicked;
             _popupSettingController.OnReplayGame -= OnPopupBackReplayClicked;
             _popupSettingController.OnGoHome -= OnEndGameGoHome;
         }
 
-        //lose game
         if (_loseGameController != null) {
             _loseGameController.OnClosePopup -= OnCloseLoseGame;
             _loseGameController.OnReplayAction -= OnLoseGameReplay;
             _loseGameController.OnViewAdsAction -= OnLoseGameWatchAds;
         }
-        //win game
         if (_winGameController != null) {
             _winGameController.OnClosePopup -= OnCloseWinGame;
             _winGameController.OnNextAction -= OnWinGameNextLevel;
@@ -170,8 +161,8 @@ public class GameController : MonoBehaviour
 
         if (isCompleted)
         {
-            _ecsBootstrap.IsUIBlockingInput = true; // Khóa input ngay khi thắng
-            await UniTask.Delay(TimeSpan.FromSeconds(3)); // Chờ 3 giây
+            _ecsBootstrap.IsUIBlockingInput = true; 
+            await UniTask.Delay(TimeSpan.FromSeconds(3)); 
 
             bool kq = GameGlobal.CompleteLevel(GameGlobal.SelectedLevel);
             OnOpenWinGame();
@@ -268,12 +259,12 @@ public class GameController : MonoBehaviour
             OnOpenEndGame();
         }
         else {
-            _winGameController.SetLoadingState(true); // Bật trạng thái chờ
+            _winGameController.SetLoadingState(true); 
             GameGlobal.NextLevel();
             CurrentLevel = GameGlobal.SelectedLevel;
             UpdateLevel();
-            await OnRestartGame(); // Chờ cho game restart xong
-            _winGameController.HidePopupAsync().Forget(); // Sau khi game đã sẵn sàng, mới ẩn popup
+            await OnRestartGame(); 
+            _winGameController.HidePopupAsync().Forget(); 
         }
     }
 
@@ -300,7 +291,6 @@ public class GameController : MonoBehaviour
     private void OnEndGameGoHome()
     {
         OnCloseEndGame();
-        //_ecsBootstrap.ClearOldGame();
         SceneManager.LoadScene("MainMenuScene");
     }
 

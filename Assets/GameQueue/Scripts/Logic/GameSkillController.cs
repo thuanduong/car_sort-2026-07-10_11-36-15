@@ -28,7 +28,6 @@ public class GameSkillController : MonoBehaviour
 
     private async UniTaskVoid InitSkillsAsync()
     {
-        // 1. Dọn dẹp Dummy layout đang có trên UXML
         if (skillDatabase == null) {
             var rq = Resources.LoadAsync<SkillDatabase>("SkillDatabase");
             await rq;
@@ -37,10 +36,6 @@ public class GameSkillController : MonoBehaviour
         }
 
         skillsWrapper.Clear();
-
-        // 2. Lấy dữ liệu skill của người chơi (ở đây đang giả lập, có thể thay bằng logic load từ save game)
-        
-        // Tạo một bản sao (clone) để không làm thay đổi dữ liệu gốc trong ScriptableObject
         _playerSkills = skillDatabase.skills.Select(skill => new SkillUsageData {
             SkillId = skill.SkillId,
             SkillIcon = skill.SkillIcon,
@@ -51,8 +46,6 @@ public class GameSkillController : MonoBehaviour
         {
             CreateSkillNode(skill);
         }
-
-        // Đợi 1 frame để UI setup xong
         await UniTask.Yield();
         
         skillsWrapper.style.bottom = -200f; // Bắt đầu từ vị trí ẩn sâu hơn
@@ -85,8 +78,6 @@ public class GameSkillController : MonoBehaviour
         {
             node.RemoveFromClassList("skill-empty");
         }
-
-        // Gắn phân cấp
         badge.Add(badgeText);
         node.Add(iconBtn);
         node.Add(badge);
@@ -97,7 +88,6 @@ public class GameSkillController : MonoBehaviour
 
     private async UniTaskVoid OnSkillClicked(VisualElement node, Label badgeText, SkillUsageData data)
     {
-        // Chặn input nếu đang có animation hoặc UI khác
         if (ecsBootstrap.IsUIBlockingInput || ecsBootstrap.IsPlaying == false)
         {
             return;
@@ -109,14 +99,11 @@ public class GameSkillController : MonoBehaviour
         data.UsageCount--;
         badgeText.text = data.UsageCount.ToString();
         
-
         node.style.scale = new StyleScale(Vector2.one); // Reset scale
         _ = DOTween.To(() => 1f, 
                    x => node.style.scale = new StyleScale(new Vector2(x, x)), 
                    0.8f, 0.1f)
-               .SetLoops(2, LoopType.Yoyo); // Nén xuống và nảy lên
-
-        // Thực thi logic của skill
+               .SetLoops(2, LoopType.Yoyo); 
         ExecuteSkill(data.SkillId);
 
         if (data.UsageCount == 0)

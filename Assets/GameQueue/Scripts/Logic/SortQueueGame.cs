@@ -24,7 +24,6 @@ public class SortQueueGame : MonoBehaviour
     public int queueCount = 4; 
     public int itemsPerQueue = 4;
 
-    // UI Toolkit Elements
     public UIDocument uiDocument;
     [SerializeField] private PopupSettingController _popupSettingController;
     [SerializeField] private LoseGameController _loseGameController;
@@ -36,8 +35,6 @@ public class SortQueueGame : MonoBehaviour
     private VisualElement winGameInstance;
     private VisualElement endGameInstance;
     private Button settingsButton;
-
-    // Các Transform lưu trữ Anchor được tạo ra bằng code
     private Transform[] queueAnchors;
     private Transform dummyAnchor;
 
@@ -88,23 +85,18 @@ public class SortQueueGame : MonoBehaviour
             settingsButton.clicked += OnSettingsButtonClicked;
         }
 
-        //setting
         popupSettingInstance = root.Q<VisualElement>("PopupSettingInstance");
         popupSettingInstance?.AddToClassList("popup-closed");
         _popupSettingController.OnClosePopup += OnPopupBackClicked;
-
-        //lose game
         loseGameInstance = root.Q<VisualElement>("LoseGameInstance");
         loseGameInstance?.AddToClassList("popup-closed");
         _loseGameController.OnClosePopup += OnCloseLoseGame;
         _loseGameController.OnReplayAction += OnLoseGameReplay;
         _loseGameController.OnViewAdsAction += OnLoseGameWatchAds;
-        //win game
         winGameInstance = root.Q<VisualElement>("WinGameInstance");
         winGameInstance?.AddToClassList("popup-closed");
         _winGameController.OnClosePopup += OnCloseWinGame;
         _winGameController.OnNextAction += OnWinGameNextLevel;
-        //end game
         endGameInstance = root.Q<VisualElement>("EndGameInstance");
         endGameInstance?.AddToClassList("popup-closed");
         _endGameController.OnClosePopup += OnCloseEndGame;
@@ -126,12 +118,8 @@ public class SortQueueGame : MonoBehaviour
         StartGame();
     }
 
-    /// <summary>
-    /// Hàm mới: Sinh tự động các Anchor và gán index
-    /// </summary>
     private void GenerateAnchors()
     {
-        // Tính toán tổng chiều rộng để căn giữa các Queue
         float totalWidth = (queueCount - 1) * queueSpacingX;
         Vector3 startPos = levelRoot.position - new Vector3(totalWidth / 2f, 0, 0);
 
@@ -142,8 +130,6 @@ public class SortQueueGame : MonoBehaviour
             Vector3 spawnPos = startPos + new Vector3(i * queueSpacingX, 0, 0);
             GameObject anchorObj = Instantiate(queueAnchorPrefab, spawnPos, Quaternion.identity, levelRoot);
             anchorObj.name = $"QueueAnchor_{i}";
-
-            // Tự động gán QueueIndex để đảm bảo logic click không bị sai lệch
             QueueAnchor qa = anchorObj.GetComponent<QueueAnchor>();
             if (qa == null) qa = anchorObj.AddComponent<QueueAnchor>();
             qa.queueIndex = i;
@@ -151,8 +137,6 @@ public class SortQueueGame : MonoBehaviour
 
             queueAnchors[i] = anchorObj.transform;
         }
-
-        // Sinh Dummy Anchor
         Vector3 dPos = levelRoot.position + (Vector3)dummyPosition;
         GameObject dummyObj = Instantiate(dummyAnchorPrefab, dPos, Quaternion.identity, levelRoot);
         dummyObj.name = "DummyAnchor";
@@ -172,8 +156,6 @@ public class SortQueueGame : MonoBehaviour
                 pool.Add(type);
             }
         }
-
-        // Shuffle
         for (int i = 0; i < pool.Count; i++)
         {
             int temp = pool[i];
@@ -283,7 +265,6 @@ public class SortQueueGame : MonoBehaviour
 
     private void ClearSceneObjects()
     {
-        // Xóa phần tử gameplay
         if (dummyGameObject != null) Destroy(dummyGameObject);
         foreach (var qList in queuesGameObjects)
         {
@@ -292,8 +273,6 @@ public class SortQueueGame : MonoBehaviour
                 if (obj != null) Destroy(obj);
             }
         }
-        
-        // Xóa các Anchor động để tạo lại cái mới khi Restart (phòng trường hợp đổi số lượng Queue)
         if (dummyAnchor != null) Destroy(dummyAnchor.gameObject);
         if (queueAnchors != null)
         {
