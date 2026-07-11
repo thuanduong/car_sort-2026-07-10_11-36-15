@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="EndGameStyle.uss" />
+    
+    <ui:VisualElement class="overlay" name="EndGameOverlay">
+        
+        <ui:VisualElement class="popup-container" name="EndGamePopupContainer">
+            
+            <ui:VisualElement class="title-text" />
+            <ui:VisualElement class="subtitle-text"/>
+            
+            <ui:Button name="EndGameHomeButton" class="home-button simple-button" />            
+            
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

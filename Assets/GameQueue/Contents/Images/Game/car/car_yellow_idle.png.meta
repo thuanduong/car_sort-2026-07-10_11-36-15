@@ -1,0 +1,2205 @@
+fileFormatVersion: 2
+guid: bb8d7139047d5ef4b807e0d4a3c5cbda
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: car_yellow_idle_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676a09d94a2b86546ba291ce59d801de
+      internalID: -1546759359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_1
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa8a2082149a024fa7f6d49e7ee2413
+      internalID: 2136016548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_2
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce131d8324cceb34093aab4e9caab7d4
+      internalID: -1780861833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_3
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c502adb425388534e878c489e08f5990
+      internalID: 1897957958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_4
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8923b5d0f325f87408a2b204e4cad56a
+      internalID: -1210700335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_5
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a2ca960e4cd464aa02d76ac2545d9b
+      internalID: -709879925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_6
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ffe105b8f8abfb4b968a0130a3f51f9
+      internalID: 1251306527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_7
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28d9ff0c28d9a041a59c44d9a7cc29f
+      internalID: 1049945129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_8
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300ca487b3dd50a4e9bcf69c0d3db674
+      internalID: 1300716058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_9
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 1475
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd64eb94eeef56244b2d4fe3e817256b
+      internalID: 1092994072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_10
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717ff77df3ae01047a27cc5041c5d343
+      internalID: -1467336365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_11
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553dbdb2528e0004a942e3af89b26380
+      internalID: 1605247614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_12
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4e494b3f3b8a24fb8b7f27bba2b99e
+      internalID: -872457445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_13
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdb0d9e6107d53448e85331bf15d78a
+      internalID: -1951804177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_14
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd67e6ccbeffad64696c1c10dbd81c7a
+      internalID: -593806005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_15
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0eadc6578c37f34ea2e5ee70662e4c2
+      internalID: -1605072520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_16
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de62850f780697041b6468500c648fd4
+      internalID: 776770587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_17
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a179f55b7172c4b439c67d6becc17581
+      internalID: 1785869732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_18
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5db983286f6e4b45a90379d005338ec
+      internalID: -1768933289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_19
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 1291
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47880a333c05dc74d9a89eb3bcef2e0a
+      internalID: -44855451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_20
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82e740cb43da974cba51b3a8ac1fe4e
+      internalID: 682392064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_21
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928cdd37075798645b50087b7954ee09
+      internalID: -925775853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_22
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62270f65ec5fda4eb76831794ea2090
+      internalID: 1865821971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_23
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f79f28504e7a31742b33425c74611a33
+      internalID: 22568578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_24
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3823aa4781874644b9199085e0a43857
+      internalID: -1979025658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_25
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927015f76c1f65146aabf53d298a0997
+      internalID: 1245463503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_26
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd944e298ed548449b453e0c1167751e
+      internalID: 790181663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_27
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0d60be46b7efdb44ab7b0543f4693d8
+      internalID: -314688269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_28
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee1ef4ea42e555d40be3a35290adce20
+      internalID: -1613468933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_29
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 1107
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0694abc56fcb54479e67df5e46e25b2
+      internalID: 1127494635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_30
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6955b2f1d66cc043838805e7e10cbba
+      internalID: -1907523613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_31
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0ae549048b27b4e8ff3d0cd95d30de
+      internalID: 649037851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_32
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04108c5540c46b04cb7fbab53d79a1d8
+      internalID: -320354309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_33
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbada9d42af11c4aaeca3d53d0e004d
+      internalID: 1825780194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_34
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca3bd00b756939c4c9bfdb8fcfc2ef9d
+      internalID: -1104906197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_35
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19c15a454da4b6459f029b91829d218
+      internalID: -934994265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_36
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153d6b1899d8ece4c8ffa5e0d128fbfd
+      internalID: -1702878395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_37
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7aced279658754b82935520195d3b4
+      internalID: -905643772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_38
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678df5de6e9b4ec48a521353d1f91f6e
+      internalID: 890064717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_39
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 923
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae50e9353cc8be54bb68480e5ca616fc
+      internalID: -971171237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_40
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888ed2ef61be69641aeb215494b93919
+      internalID: 2064391506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_41
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab8219c29684e14ba2c5dfc90673958
+      internalID: 649103578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_42
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a96be3cc44fe614e9f8af5fe992f8a7
+      internalID: -347632310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_43
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e894a1dab332e2d46b553fe8fb537337
+      internalID: 139522092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_44
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7562986370ecae64f976680ffe8584c0
+      internalID: 2131143016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_45
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57d4b175db416240be3f341d62589b8
+      internalID: 1453144843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_46
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0eecb105522284488fdd1fcba55e3bb
+      internalID: 749488889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_47
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0beffcf3ae1a74d94525d8a89f5d70
+      internalID: 1545575449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_48
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9842fb289823564696202e6c2b5496d
+      internalID: -1716348567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_49
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 739
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a310573ed293b44b6832cdf6756ede
+      internalID: -991211266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_50
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19113b813d7f90a4e9a7b75a16f49ca0
+      internalID: -1914419095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_51
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a5569e6ba5f63542ba9fd1fb5ed6108
+      internalID: 1019475297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_52
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6b520af3e6ae842aff67c995a39fe5
+      internalID: 35327945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_53
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93c2b6ed67ded64c8962a57d5afb7b2
+      internalID: -1770082962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_54
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b62ab0b5cdd2d41addfeab4a553980
+      internalID: -1312752477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_55
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96444a2b0f83826469942d6d5d3f5219
+      internalID: 794459870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_56
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 446885b6e0e87ab43858f93d1270884e
+      internalID: 1912506972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_57
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa7639d661f3704482991d43b51e650
+      internalID: -1482922261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_58
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f66c0572d07724ebceac1651c4b50d
+      internalID: -505953448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_59
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 555
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d18477240e4bb20449741d807fad45c2
+      internalID: -340225942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_60
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9739539df9f646479394927c8d54e7e
+      internalID: -955725877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_61
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c8b88bcf982404c8dc74cf2f27da13
+      internalID: 1761270662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_62
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9329c03ab60964744a6d2caefbad74fc
+      internalID: 356362837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_63
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d274c73e11a4d2c418e194e271eb04da
+      internalID: -1908412494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_64
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d04cc41e3ed47f4f932ededdba96a38
+      internalID: -97625504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_65
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af727ed7fee84d4495cc5e4743ee8a2
+      internalID: -640697698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_66
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d831d449a88abca46a493094720400b3
+      internalID: -1854201910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_67
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c01381fa1888f64d910ccbead906967
+      internalID: 1375071012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_68
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8180aafbaf80969429795d3d480e4bc8
+      internalID: -268189396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_69
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 371
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae78f6ab4ee1934584b7f057a70d875
+      internalID: -1558463006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_70
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c197c7942d554fa4badeabcaffdc5eae
+      internalID: -1415062570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_71
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e915dbbb0b145a7499450f02cc0f823a
+      internalID: -2031471817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_72
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b46c547f4f7544882cd156f13add43
+      internalID: 1470517092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_73
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bf5e9e1a058b4b4c80dbfbc38380f6d
+      internalID: -843419948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_74
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fe46b5e0476b9489263c47ab926a4e
+      internalID: -1830582424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_75
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77a35e80aef7544689539bbb52ad14f
+      internalID: 2978634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_76
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fb121272ee12c340b8c2a81f9fe23a5
+      internalID: 889441285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_77
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9099c56bb84f0c547baf968c137a7862
+      internalID: -1940540372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_78
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7666f064968e8d4479e9192f633b01ec
+      internalID: 790463919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_79
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 187
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11b9598e4512a424a805178fa36406a7
+      internalID: -354855991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_80
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332057583c8bd3f43be3d9fe8ce939c4
+      internalID: -228898493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_81
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 3
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91457a4712093af4d89ce5144d5dd1a7
+      internalID: 1920920849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_82
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 3
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ce625dd3bc4ce740a98a32b3f80d733
+      internalID: -667841780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_83
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 3
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f57e0bd22fbd409408219390dd6602b4
+      internalID: 1519754004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_84
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 3
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c870b7adc08f494ea5049cab90261d8
+      internalID: -524212053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_85
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 3
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8beba9c64664dd748b5bc94405cf9d24
+      internalID: -1833944460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_86
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 3
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbb2d4bcae7c2f468d68115c183d7f3
+      internalID: -1298592374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_87
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 3
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8999aa411b1ef4b8f137e6a998add2
+      internalID: -1005844760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: car_yellow_idle_88
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 3
+        width: 178
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e378e86879db54b9307125bbe462b2
+      internalID: 1691344033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9343750a4ad2ba044922d1963b94a6e3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":178.0,"y":178.0},"gridSpriteOffset":{"x":3.0,"y":3.0},"gridSpritePadding":{"x":6.0,"y":6.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      car_yellow_idle_0: -1546759359
+      car_yellow_idle_1: 2136016548
+      car_yellow_idle_10: -1467336365
+      car_yellow_idle_11: 1605247614
+      car_yellow_idle_12: -872457445
+      car_yellow_idle_13: -1951804177
+      car_yellow_idle_14: -593806005
+      car_yellow_idle_15: -1605072520
+      car_yellow_idle_16: 776770587
+      car_yellow_idle_17: 1785869732
+      car_yellow_idle_18: -1768933289
+      car_yellow_idle_19: -44855451
+      car_yellow_idle_2: -1780861833
+      car_yellow_idle_20: 682392064
+      car_yellow_idle_21: -925775853
+      car_yellow_idle_22: 1865821971
+      car_yellow_idle_23: 22568578
+      car_yellow_idle_24: -1979025658
+      car_yellow_idle_25: 1245463503
+      car_yellow_idle_26: 790181663
+      car_yellow_idle_27: -314688269
+      car_yellow_idle_28: -1613468933
+      car_yellow_idle_29: 1127494635
+      car_yellow_idle_3: 1897957958
+      car_yellow_idle_30: -1907523613
+      car_yellow_idle_31: 649037851
+      car_yellow_idle_32: -320354309
+      car_yellow_idle_33: 1825780194
+      car_yellow_idle_34: -1104906197
+      car_yellow_idle_35: -934994265
+      car_yellow_idle_36: -1702878395
+      car_yellow_idle_37: -905643772
+      car_yellow_idle_38: 890064717
+      car_yellow_idle_39: -971171237
+      car_yellow_idle_4: -1210700335
+      car_yellow_idle_40: 2064391506
+      car_yellow_idle_41: 649103578
+      car_yellow_idle_42: -347632310
+      car_yellow_idle_43: 139522092
+      car_yellow_idle_44: 2131143016
+      car_yellow_idle_45: 1453144843
+      car_yellow_idle_46: 749488889
+      car_yellow_idle_47: 1545575449
+      car_yellow_idle_48: -1716348567
+      car_yellow_idle_49: -991211266
+      car_yellow_idle_5: -709879925
+      car_yellow_idle_50: -1914419095
+      car_yellow_idle_51: 1019475297
+      car_yellow_idle_52: 35327945
+      car_yellow_idle_53: -1770082962
+      car_yellow_idle_54: -1312752477
+      car_yellow_idle_55: 794459870
+      car_yellow_idle_56: 1912506972
+      car_yellow_idle_57: -1482922261
+      car_yellow_idle_58: -505953448
+      car_yellow_idle_59: -340225942
+      car_yellow_idle_6: 1251306527
+      car_yellow_idle_60: -955725877
+      car_yellow_idle_61: 1761270662
+      car_yellow_idle_62: 356362837
+      car_yellow_idle_63: -1908412494
+      car_yellow_idle_64: -97625504
+      car_yellow_idle_65: -640697698
+      car_yellow_idle_66: -1854201910
+      car_yellow_idle_67: 1375071012
+      car_yellow_idle_68: -268189396
+      car_yellow_idle_69: -1558463006
+      car_yellow_idle_7: 1049945129
+      car_yellow_idle_70: -1415062570
+      car_yellow_idle_71: -2031471817
+      car_yellow_idle_72: 1470517092
+      car_yellow_idle_73: -843419948
+      car_yellow_idle_74: -1830582424
+      car_yellow_idle_75: 2978634
+      car_yellow_idle_76: 889441285
+      car_yellow_idle_77: -1940540372
+      car_yellow_idle_78: 790463919
+      car_yellow_idle_79: -354855991
+      car_yellow_idle_8: 1300716058
+      car_yellow_idle_80: -228898493
+      car_yellow_idle_81: 1920920849
+      car_yellow_idle_82: -667841780
+      car_yellow_idle_83: 1519754004
+      car_yellow_idle_84: -524212053
+      car_yellow_idle_85: -1833944460
+      car_yellow_idle_86: -1298592374
+      car_yellow_idle_87: -1005844760
+      car_yellow_idle_88: 1691344033
+      car_yellow_idle_9: 1092994072
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

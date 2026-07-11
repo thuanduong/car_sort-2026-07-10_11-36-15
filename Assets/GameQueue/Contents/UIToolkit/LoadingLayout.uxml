@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="LoadingStyle.uss"/>
+    <ui:VisualElement class="container">
+        <ui:VisualElement name="car-bg" class="car-bg"/>
+        <ui:VisualElement class="safe-area"> 
+            <ui:VisualElement class="logo-box"/>
+            <ui:ProgressBar value="0" high-value="100" name="LoadingBar" class="loading-bar"/>
+            <ui:Label text="Loading..." name="LoadingText" class="loading-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

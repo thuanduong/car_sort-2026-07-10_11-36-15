@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="PopupSettingStyle.uss" />
+    
+    <ui:VisualElement class="popup-overlay" name="PopupOverlay">
+        
+        <ui:VisualElement class="popup-container" name="PopupContainer">
+            <ui:VisualElement class="popup-title" />
+            
+            <ui:VisualElement class="toggles-row">
+                <ui:Toggle name="MusicToggle" class="music-toggle" />
+                <ui:Toggle name="SoundToggle" class="sound-toggle" />
+            </ui:VisualElement>
+            
+            <ui:VisualElement class="buttons-column">
+                <ui:Button name="ContinueButton" class="continue-button simple-button hidden-button" />
+                <ui:Button name="ReplayButton" class="replay-button simple-button hidden-button" />
+                <ui:Button name="HomeButton" class="home-button simple-button hidden-button" />
+                <ui:Button name="BackButton" class="back-button simple-button back-button">
+                    <ui:Label text="Close" class="back-title"/>
+                </ui:Button>
+            </ui:VisualElement>
+            
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

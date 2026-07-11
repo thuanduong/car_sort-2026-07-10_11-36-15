@@ -1,0 +1,225 @@
+.main-container {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF00;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/bg_r.png");
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+.car-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/bg_car.png");
+    background-repeat: repeat;
+    background-size: 120% 120%;
+    background-size: 1579px;
+}
+
+.safe-area {
+    width : 100%;
+    height: 100%;
+    max-width: 1520px;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
+    height:100%;
+    width:100%;
+}
+
+
+.group-top {
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.group-bottom {
+    height:600px;
+    width:100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.select-title {
+    margin-bottom: 20px;
+    margin-top: 0px;
+    width: 693px;
+    height: 55px;
+    background-color: #FFFFFF00;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/select_title.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.simple-button:hover {
+    scale: 1.05;
+}
+
+.simple-button:active {
+    scale: 1.15;
+    transition-duration: 0.1s;
+}
+
+.settings-button {
+    position: absolute;
+    width: 131px;
+    height: 148px;
+
+    top: 40px;
+    right: 40px;
+
+    border-width: 0px;
+    background-color: #FFFFFF00;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/btn_setting.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.play-button {
+    width: 385px;
+    height: 162px;
+
+    background-color: #3B82F600; /* Xanh dương */
+    font-size: 44px;
+    -unity-font-style: bold;
+    border-radius: 0px;
+    border-width: 0;
+    /*position: absolute;
+    bottom: 432px;*/
+    margin-top : 65px;
+    letter-spacing: 4px;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/btn_play.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-material: url("project://database/Assets/GameQueue/Contents/Materials/Sheen%20UI%20Button.mat");
+}
+
+.map-scroll-view {
+    flex-grow: 1;
+}
+
+/* Kích thước của map-content sẽ được gán bằng C# tùy thuộc tổng số Level */
+.map-content {
+    position: relative;
+    width: 100%;
+}
+
+/* --- Style cho Line (Đường nối) --- */
+.map-line {
+    position: absolute;
+    height: 24px;
+    background-color: #06406B; 
+    transform-origin: left center;
+    margin-top: -12px;
+}
+
+/* --- Style cho Node --- */
+.node-base {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /* border-radius: 60px; */
+    justify-content: center;
+    align-items: center;
+    /* margin-left: -60px;
+    margin-top: -60px; */
+}
+
+.node-text {
+    font-size: 50px;
+    -unity-font-style: bold;
+    color: #FFFFFF;
+    -unity-font-definition: url("project://database/Assets/GameQueue/Contents/Fonts/Obelix/DFVN%20Obelix%20Pro.ttf"); 
+    -unity-text-outline-width: 2px;
+    -unity-text-outline-color: #000000;
+}
+
+/* Các trạng thái của Node */
+.node-passed {
+    background-color: #00000000;
+
+    width: 178px;
+    height: 178px;
+
+    margin-left: -89px;
+    margin-top: -89px;
+
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/lv_complete.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.node-current {
+    background-color: #00000000;
+    
+    width: 335px;
+    height: 335px;
+
+    margin-left: -167px;
+    margin-top: -167px;
+
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/lv_current.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.node-current .node-text {
+    font-size: 62px; /* Chữ to hơn cho level hiện tại */
+}
+
+.node-locked {
+    background-color: #00000000;
+    
+    width: 178px;
+    height: 178px;
+
+    margin-left: -89px;
+    margin-top: -89px;
+
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/lv_lock.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.node-locked .node-text, .node-passed .node-text{
+    font-size: 0px;
+}
+
+.node-passed:hover  {
+    scale: 1.05;
+    transition-duration: 0.1s;
+}
+
+.node-passed:active {
+    scale: 1.15;
+    transition-duration: 0.1s;
+}
+
+/* --- Ẩn thanh cuộn của MapScrollView --- */
+.map-scroll-view > .unity-scroll-view__vertical-scroller,
+.map-scroll-view #unity-vertical-scroller {
+    width: 0;
+}
+
+.map-scroll-view > .unity-scroll-view__horizontal-scroller,
+.map-scroll-view #unity-horizontal-scroller {
+    height: 0;
+}
+
+.popup-closed {
+    opacity: 0;
+    picking-mode: ignore;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 1;
+    picking-mode: position; 
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}

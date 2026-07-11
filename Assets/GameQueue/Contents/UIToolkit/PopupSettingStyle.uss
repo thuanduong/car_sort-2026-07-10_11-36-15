@@ -1,0 +1,195 @@
+.popup-closed {
+    /* Ẩn hoàn toàn và cho phép click xuyên qua */
+    opacity: 0;
+    picking-mode: ignore;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Đen mờ 60% */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 1;
+    picking-mode: position; /* Đảm bảo có thể click khi mở */
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+/* Khung nội dung Popup */
+.popup-container {
+    border-width: 0px;
+    padding: 30px;
+    width: 638px;
+    height: 855px;
+
+    align-items: center;
+    transform-origin: center center; 
+    background-color: #00000000;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/popup.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+
+}
+
+.popup-title {
+    width: 492px;
+    height: 133px;
+    margin-top: 118px;
+    margin-left: 64px;
+    margin-right: 64px;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/label_setting.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.toggles-row {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.music-toggle, .sound-toggle {
+    font-size: 16px;
+    color: #4B5563;
+    -unity-font-style: bold;
+    width: 98px;
+    height: 108px;
+}
+.music-toggle {
+    margin-right: 50px;
+}
+
+.sound-toggle {
+    margin-left: 50px;
+}
+
+.music-toggle .unity-toggle__input, .sound-toggle .unity-toggle__input {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.music-toggle .unity-toggle__checkmark, .sound-toggle .unity-toggle__checkmark {
+    width: 0px;
+    height: 0px;
+}
+
+.music-toggle .unity-toggle__input {
+    background-color: #00000000;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/toggle_music_off.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.music-toggle .unity-toggle__checkmark {
+    background-color: #00000000;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/toggle_music_on.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-background-image-tint-color: #FFFFFF;
+}
+
+.music-toggle:checked .unity-toggle__checkmark, .sound-toggle:checked .unity-toggle__checkmark {
+    width: 100%;
+    height: 100%;
+    border-width: 0px;
+}
+
+
+.sound-toggle .unity-toggle__input {
+    background-color: #00000000;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/toggle_sound_off.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.sound-toggle .unity-toggle__checkmark {
+    background-color: #00000000;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/toggle_sound_on.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+    -unity-background-image-tint-color: #FFFFFF;
+    
+}
+
+.buttons-column {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.continue-button {
+    width: 428px;
+    height: 116px;
+    margin-bottom: 12px;
+    border-width: 0;
+    background-color: #00000000;
+
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/btn_continue.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.replay-button {
+    width: 428px;
+    height: 116px;
+    margin-bottom: 12px;
+    border-width: 0;
+    background-color: #00000000;
+
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/btn_replay.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.home-button {
+    width: 428px;
+    height: 116px;
+    margin-bottom: 12px;
+    border-width: 0;
+    background-color: #00000000;
+
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/btn_home.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.back-button {
+    position: absolute;
+    width: 428px;
+    height: 116px;
+    margin-bottom: 12px;
+    border-width: 0;
+    bottom: -300px;
+
+    background-color: #00000000;
+    background-image: url("project://database/Assets/GameQueue/Contents/Images/UI/btn_yellow_large.png"); 
+    -unity-background-scale-mode: scale-to-fit;
+}
+
+.back-button .back-title {
+    margin-top : 20px;
+    font-size: 35px;
+    -unity-font-style: bold;
+    color: #FFFFFF;
+    -unity-font-definition: url("project://database/Assets/GameQueue/Contents/Fonts/Obelix/DFVN%20Obelix%20Pro.ttf"); 
+    -unity-text-outline-width: 4px;
+    -unity-text-outline-color: #000000;
+}
+
+
+.simple-button:hover {
+    scale: 1.05;
+}
+
+.simple-button:active {
+    scale: 1.15;
+    transition-duration: 0.1s;
+}
+
+/* Class dùng để ẩn các button theo yêu cầu */
+.hidden-button {
+    display: none;
+}

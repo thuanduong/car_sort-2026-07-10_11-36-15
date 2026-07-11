@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="LevelStyle.uss"/>
+    <ui:Template name="PopupSettingTemplate" src="PopupSettingLayout.uxml"/>
+    <ui:VisualElement class="main-container">
+        <ui:VisualElement name="car-bg" class="car-bg"/>
+        <ui:VisualElement class="safe-area"> 
+            <ui:VisualElement class="content-container">
+                <ui:VisualElement class="group-top">
+                    <ui:ScrollView name="MapScrollView" mode="Vertical" horizontal-scroller-visibility="Hidden" vertical-scroller-visibility="Hidden" class="map-scroll-view">
+                        <ui:VisualElement name="MapContent" class="map-content"/>
+                    </ui:ScrollView>
+                </ui:VisualElement>
+                <ui:VisualElement class="group-bottom">
+                    <ui:VisualElement class="select-title"/>
+                    <ui:Button name="PlayButton" class="play-button simple-button"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button name="SettingsButton" class="settings-button simple-button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Instance template="PopupSettingTemplate" name="PopupSettingInstance" class="popup-closed" />
+</ui:UXML>

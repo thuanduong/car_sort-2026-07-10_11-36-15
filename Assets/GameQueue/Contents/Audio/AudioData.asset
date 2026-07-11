@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91398cc496f8f6646a82188de0e465af, type: 3}
+  m_Name: AudioData
+  m_EditorClassIdentifier: Assembly-CSharp::AudioData
+  tracks:
+  - name: background
+    clip: {fileID: 8300000, guid: 6a6a7634299bd0a4292626e8c12f4fe4, type: 3}
+  sounds:
+  - name: click
+    clips:
+    - {fileID: 8300000, guid: e1194f3fe20a72946ab9b1295e9a89b7, type: 3}
+    volume: 1
+    pitchVariance: 0
+  - name: lose
+    clips:
+    - {fileID: 8300000, guid: c8b13af2609d265458c0487e129644cf, type: 3}
+    volume: 1
+    pitchVariance: 0
+  - name: win
+    clips:
+    - {fileID: 8300000, guid: fb454f6d902a17640b318be12d8c675a, type: 3}
+    volume: 1
+    pitchVariance: 0
+  - name: jump
+    clips:
+    - {fileID: 8300000, guid: 1334d0c394a61ff4e9878ae4c4d95ddb, type: 3}
+    volume: 1
+    pitchVariance: 0
+  - name: QueueComplete
+    clips:
+    - {fileID: 8300000, guid: b4efa7f492a651e419e97cd0696f65eb, type: 3}
+    volume: 1
+    pitchVariance: 0

@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="PopupSettingTemplate" src="project://database/Assets/GameQueue/Contents/UIToolkit/PopupSettingLayout.uxml?fileID=9197481963319205126&amp;guid=c7373f195a0401147a7f22a4c89710ca&amp;type=3#PopupSettingLayout"/>
+    <Style src="project://database/Assets/GameQueue/Contents/UIToolkit/MainMenuStyle.uss?fileID=7433441132597879392&amp;guid=7c227efb240bcc7488a8144fab4a073e&amp;type=3#MainMenuStyle"/>
+    <ui:VisualElement class="main-container">
+        <!-- <ui:VisualElement name="car-bg" class="car-bg"/> -->
+        <ui:VisualElement class="safe-area">
+            <ui:VisualElement class="content-container">
+                <ui:VisualElement class="logo-box"/>
+                <ui:Button name="PlayButton" class="play-button simple-button"/>
+            </ui:VisualElement>
+            <ui:Button name="SettingsButton" class="settings-button simple-button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Instance template="PopupSettingTemplate" name="PopupSettingInstance" class="popup-closed"/>
+</ui:UXML>

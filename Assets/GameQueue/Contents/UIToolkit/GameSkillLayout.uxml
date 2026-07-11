@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="GameSkillStyle.uss" />
+    <ui:VisualElement class="skills-wrapper" name="SkillsWrapper">
+        <ui:VisualElement class="skill-node">
+            <ui:Button class="skill-icon simple-button" />
+            <ui:VisualElement class="skill-badge">
+                <ui:Label text="3" class="badge-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+    </ui:VisualElement>
+</ui:UXML>

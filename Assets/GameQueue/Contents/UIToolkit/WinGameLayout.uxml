@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/GameQueue/Contents/UIToolkit/WinGameStyle.uss?fileID=7433441132597879392&amp;guid=0cdd15d8718735a4dbda94249c910a71&amp;type=3#WinGameStyle"/>
+    <ui:VisualElement name="Overlay" class="overlay">
+        <ui:VisualElement name="PopupContainer" class="popup-container">
+            <!-- <ui:VisualElement class="star"/> -->
+            <ui:VisualElement class="title-text"/>
+            <ui:Button name="NextButton" class="next-button simple-button">
+                <ui:Label text="NEXT" class="next-title"/>
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

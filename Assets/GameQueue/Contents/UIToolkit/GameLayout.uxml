@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="GameStyle.uss" />
+    <ui:Template name="PopupSettingTemplate" src="PopupSettingLayout.uxml"/>
+    <ui:Template name="LoseGameTemplate" src="LoseGameLayout.uxml"/>
+    <ui:Template name="WinGameTemplate" src="WinGameLayout.uxml"/>
+    <ui:Template name="EndGameTemplate" src="EndGameLayout.uxml"/>
+    <ui:Template name="GameSkillTemplate" src="GameSkillLayout.uxml"/>
+
+    <ui:VisualElement name="Root" class="main-container">
+        <ui:VisualElement name="GameUI" class="safe-area">
+            <ui:VisualElement class="content-container">    
+                <ui:VisualElement class="group-top">
+                    <ui:VisualElement class="level-box">
+                        <ui:Label text="Level " class="box-text"/>
+                        <ui:Label name="level" text="6" class="box-text box-text-40"/>
+                    </ui:VisualElement>
+                    <ui:VisualElement class="move-box">
+                        <ui:Label text="move " class="box-text"/>
+                        <ui:Label name="move" text="6" class="box-text box-text-40"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:Instance template="GameSkillTemplate" name="GameSkillInstance" class="game-skill-area popup-closed"/>
+            </ui:VisualElement>
+            <ui:Button name="QuickPass" class="quick-button simple-button" />
+            <ui:Button name="SettingsButton" class="settings-button simple-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Instance template="PopupSettingTemplate" name="PopupSettingInstance" class="popup-closed"/>
+    <ui:Instance template="LoseGameTemplate" name="LoseGameInstance" class="popup-closed"/>
+    <ui:Instance template="WinGameTemplate" name="WinGameInstance" class="popup-closed"/>
+    <ui:Instance template="EndGameTemplate" name="EndGameInstance" class="popup-closed"/>
+</ui:UXML>
