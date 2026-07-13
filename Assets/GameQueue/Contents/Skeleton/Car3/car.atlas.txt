@@ -1,0 +1,69 @@
+car.png
+size:1101,1101
+filter:Linear,Linear
+pma:true
+Layer 1
+bounds:796,11,249,294
+rotate:90
+Layer 14
+bounds:286,790,239,279
+rotate:90
+Layer 2
+bounds:387,1031,180,68
+Layer 25
+bounds:295,6,249,294
+Layer 26
+bounds:569,870,229,282
+rotate:90
+Layer 27
+bounds:853,825,246,274
+Layer 28
+bounds:567,629,239,279
+rotate:90
+Layer 29
+bounds:2,62,238,291
+rotate:90
+Layer 29 copy 2
+bounds:556,96,238,291
+Layer 3
+bounds:54,1067,40,32
+offsets:1,1,42,34
+Layer 3 copy 4
+bounds:2,1079,50,20
+offsets:2,1,53,22
+Layer 31
+bounds:847,262,238,285
+Layer 31 copy 2
+bounds:560,389,238,285
+rotate:90
+Layer 33
+bounds:279,302,243,275
+rotate:90
+Layer 33 copy 2
+bounds:2,328,243,275
+rotate:90
+Layer 37
+bounds:281,547,241,277
+rotate:90
+Layer 37 copy 2
+bounds:2,573,241,277
+rotate:90
+Layer 4
+bounds:150,1061,39,38
+offsets:2,1,42,40
+Layer 4 copy 4
+bounds:96,1061,52,38
+offsets:1,1,54,40
+Layer 6
+bounds:289,1047,52,96
+offsets:1,1,54,98
+rotate:90
+Layer 6 copy
+bounds:191,1047,52,96
+offsets:1,1,54,98
+rotate:90
+b
+bounds:848,549,246,274
+bi
+bounds:2,816,229,282
+rotate:90

@@ -37,10 +37,14 @@ public class PopupSettingController : MonoBehaviour
         replayButton = root.Q<Button>("ReplayButton");
         homeButton = root.Q<Button>("HomeButton");
         backButton = root.Q<Button>("BackButton");
+
+        // Đăng ký sự kiện
         backButton.clicked += OnBackOrContinueClicked;
         continueButton.clicked += OnBackOrContinueClicked;
         replayButton.clicked += OnReplayClicked;
         homeButton.clicked += OnHomeClicked;
+        
+        // Đăng ký sự kiện thay đổi trạng thái On/Off của Toggle
         musicToggle.RegisterValueChangedCallback(evt => OnMusicToggled(evt.newValue));
         soundToggle.RegisterValueChangedCallback(evt => OnSoundToggled(evt.newValue));
 
@@ -63,13 +67,20 @@ public class PopupSettingController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Hàm mở Popup công khai.
+    /// </summary>
+    /// <param name="showGameplayButtons">True nếu muốn hiện các nút ẩn (Continue, Replay, Home)</param>
     public void OpenPopup(bool showGameplayButtons)
     {
         Debug.Log($"OpenPopup: {showGameplayButtons}");
+        // Điều khiển hiển thị nhóm nút ẩn bằng cách thêm/bớt class USS
         ToggleContextualButton(continueButton, showGameplayButtons);
         ToggleContextualButton(replayButton, showGameplayButtons);
         ToggleContextualButton(homeButton, showGameplayButtons);
         ToggleContextualButton(backButton, !showGameplayButtons);
+
+        // Chạy hiệu ứng mở bất đồng bộ
         OpenPopupAsync().Forget();
     }
 
@@ -99,16 +110,21 @@ public class PopupSettingController : MonoBehaviour
 
     private async UniTaskVoid OpenPopupAsync()
     {
+        // Hiện overlay trước khi chạy tween
         popupOverlay.style.display = DisplayStyle.Flex;
+        
+        // Reset trạng thái ban đầu của UI để chuẩn bị làm animation
         popupOverlay.style.opacity = 0f;
         popupContainer.style.scale = new StyleScale(new Vector2(0.5f, 0.5f));
+
+        // Dùng UniTask.WhenAll để chạy song song hiệu ứng Fade đường nền và Scale-up khung popup
         await UniTask.WhenAll(
             DOTween.To(() => popupOverlay.style.opacity.value, x => popupOverlay.style.opacity = x, 1f, 0.3f)
                 .SetEase(Ease.OutQuad).ToUniTask(),
                 
             DOTween.To(() => popupContainer.style.scale.value.value.x, 
                        x => popupContainer.style.scale = new StyleScale(new Vector2(x, x)), 1f, 0.35f)
-                .SetEase(Ease.OutBack).ToUniTask() 
+                .SetEase(Ease.OutBack).ToUniTask() // Tạo hiệu ứng nhún nhẹ (Back) khi mở ra ngoài
         );
     }
 

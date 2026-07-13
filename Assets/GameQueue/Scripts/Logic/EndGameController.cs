@@ -25,7 +25,10 @@ public class EndGameController : MonoBehaviour
         
         homeButton = root.Q<Button>("EndGameHomeButton");
 
+        // Gắn sự kiện click
         homeButton.clicked += OnHomeClicked;
+
+        // Ẩn ban đầu
         overlay.style.display = DisplayStyle.None;
     }
 
@@ -34,6 +37,9 @@ public class EndGameController : MonoBehaviour
         homeButton.clicked -= OnHomeClicked;
     }
 
+    /// <summary>
+    /// Gọi hàm này khi người chơi hết nước đi (Out of moves)
+    /// </summary>
     public void ShowScreen()
     {
         ShowPopupAsync().Forget();
@@ -42,6 +48,8 @@ public class EndGameController : MonoBehaviour
     private async UniTaskVoid ShowPopupAsync()
     {
         overlay.style.display = DisplayStyle.Flex;
+        
+        // Đặt giá trị khởi tạo cho animation
         overlay.style.opacity = 0f;
         popupContainer.style.scale = new StyleScale(new Vector2(0.3f, 0.3f));
 
@@ -54,7 +62,7 @@ public class EndGameController : MonoBehaviour
                    
             DOTween.To(() => popupContainer.style.scale.value.value.x, 
                        x => popupContainer.style.scale = new StyleScale(new Vector2(x, x)), 1f, 0.4f)
-                   .SetEase(Ease.OutBack).ToUniTask() 
+                   .SetEase(Ease.OutBack).ToUniTask() // Ease.OutBack tạo hiệu ứng nảy (bounce nhẹ)
         );
     }
 
@@ -68,6 +76,7 @@ public class EndGameController : MonoBehaviour
 
     private async UniTaskVoid HidePopupAsync()
     {
+        // Vô hiệu hóa nút bấm để tránh double-click trong lúc đang đóng
         homeButton.SetEnabled(false);
 
         await UniTask.WhenAll(
@@ -80,6 +89,8 @@ public class EndGameController : MonoBehaviour
         );
 
         overlay.style.display = DisplayStyle.None;
+        
+        // Bật lại nút cho lần mở sau
         homeButton.SetEnabled(true);
 
         OnHomeAction();
